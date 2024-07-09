@@ -30,23 +30,27 @@ export interface ISendPostData {
 
 export class YupAPI {
 
-	private PK: string;
-	private token: string;
+	private PK: string = ''
+	private token: string = ''
 	private BP_ENDPOINT = 'https://api.yup.io'
 
 	constructor({
 		PK,
 		token
 	}: {
-		PK: string,
-		token: string
+		PK?: string,
+		token?: string
 	
 	}) {
-		if (!PK || !token) {
+		if (!PK && !token) {
 			throw new Error('Missing PK or token');
 		}
-		this.PK = PK;
-		this.token = token;
+		if (PK) {
+			this.PK = PK
+		}
+		if (token) {
+			this.token = token
+		}
 	}
 
 	getLoginTokenFromPK = async () => {
