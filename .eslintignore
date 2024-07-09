@@ -1,0 +1,5 @@
+node_modules
+public
+vendor
+tailwind.config.js
+postcss.config.cjs

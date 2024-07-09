@@ -1,0 +1,50 @@
+{
+  "name": "yup-api-interact",
+  "version": "0.1.2",
+  "description": "Simple class library to interact with Yup Api and post using your token or private key.",
+  "repository": "https://github.com/andrei0x309/farcaster-hub-utils",
+  "author": "Andrei O",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "yup",
+    "web3",
+    "posting using yup",
+    "multi platform posting",
+    "bluesky twitter farcaster lens threads",
+    "yup API"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/yup-api-interact.umd.js",
+  "module": "./dist/yup-api-interact.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/yup-api-interact.es.js",
+      "require": "./dist/yup-api-interact.umd.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint --ext .vue --ignore-path .gitignore --fix src",
+    "dev": "vite dev",
+    "preversion": "yarn build",
+    "release": "yarn preversion && yarn config set version-tag-prefix yup-api-interact@v &&  yarn config set version-git-message yup-api-interact@v%s' && yarn version --patch",
+    "postversion": "git push && git push --tags && npm publish",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^9.6.0",
+    "eslint-plugin-vue": "^9.27.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.3",
+    "yarn-upgrade-all": "^0.7.2"
+  },
+  "dependencies": {
+    "ethers": "^6.13.1"
+  }
+}

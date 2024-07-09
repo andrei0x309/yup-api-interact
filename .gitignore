@@ -1,0 +1,7 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+components.d.ts
+yarn-error.log
