@@ -1,6 +1,6 @@
 {
   "name": "yup-api-interact",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Simple class library to interact with Yup Api and post using your token or private key.",
   "repository": "https://github.com/andrei0x309/farcaster-hub-utils",
   "author": "Andrei O",
