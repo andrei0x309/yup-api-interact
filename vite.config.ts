@@ -7,7 +7,6 @@ declare const __dirname: string;
 
 const resolvePath = (str: string) => path.resolve(__dirname, str)
 
-
 export default defineConfig({
 	resolve: {
 		alias: {
@@ -24,11 +23,17 @@ export default defineConfig({
 			sourceMap: false,
 }),
 	],
+	esbuild: {
+		platform: 'node',
+		target: 'node20'
+	},
 	build: {
+		target: 'node20',
 		lib: {
 			entry: resolvePath('src/main.ts'),
 			name: 'YupAPI',
 			fileName: (format) => `yup-api-interact.${format}.js`,
+			formats: ['es', 'umd'],
 		},
 	},
 })
