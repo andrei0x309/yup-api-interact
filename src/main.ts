@@ -1,5 +1,7 @@
 import { ethers } from 'ethers'
 
+const DISABLED_BECAUSE_OF_SUNSET = true
+
 export type TPlatform = 'farcaster' | 'twitter' | 'lens' | 'bsky' | 'threads' | 'mastodon'
 
 export type TMedia = {
@@ -42,6 +44,11 @@ export class YupAPI {
 		token?: string
 	
 	}) {
+
+		if(DISABLED_BECAUSE_OF_SUNSET) {
+			throw new Error('YupAPI is disabled because yup was discontinued, and the API is no longer available')
+		}
+
 		if (!PK && !token) {
 			throw new Error('Missing PK or token');
 		}

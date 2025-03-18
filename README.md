@@ -1,5 +1,7 @@
 ## yup-api-interact
 
+> Yup API was discontinued on FEB 2025 as company was acquired. This library is no longer maintained, and is kept here for historical purposes. It will throw an error if used.
+
 Simple library to intercat with YUP API mainly for creating posts.
 Works with either the private key of the yup account or a yup account token.
 If private key is used token will be generated on the fly and stored in the class instance.
